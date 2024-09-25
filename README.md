@@ -1,3 +1,3 @@
 # Портфолио
 
-[Моё первое портфолио](https://duckduckgo.com).
+[Моё первое портфолио](https://duckduckgo.com)

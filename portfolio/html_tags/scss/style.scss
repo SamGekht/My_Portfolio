@@ -1,0 +1,20 @@
+@import "nullstyle.scss";
+
+h1 {
+  color: red;
+  text-align: center;
+  font-size: 150px;
+}
+
+h1:hover {
+  color: green;
+}
+
+p {
+  font-size: 50px;
+}
+
+span {
+  color: bisque;
+  text-align: right;
+}

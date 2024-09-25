@@ -1,0 +1,338 @@
+// Дз1
+"use strict";
+console.log("Я учу JS");
+
+//Дз2
+let eyeColor;
+
+let user,
+  userName = "Вася";
+user = userName = null;
+console.log(userName);
+
+let userDic;
+if (typeof userDic === "undefined") {
+  console.log("НЕТ");
+} else {
+  console.log("определена");
+}
+
+let trueF = 58 > 2;
+console.log(trueF);
+
+let goYankee = 12312542151521n;
+console.log(typeof goYankee);
+
+let chislOdin = true;
+console.log(chislOdin);
+console.log(typeof chislOdin);
+
+chislOdin = String(chislOdin);
+console.log(chislOdin);
+console.log(typeof chislOdin);
+
+let result = 3 * "gogo";
+console.log(result);
+
+let addUser = 1;
+addUser++;
+console.log(addUser);
+
+let number17 = 17;
+number17 += addUser;
+console.log(number17);
+
+let message = "Hello World";
+
+if (1 > 2) {
+  console.log(message);
+}
+
+if (2 > 1) console.log(message);
+
+let vopros = "Привет, ";
+let voprosend = 3 > 4 ? "Pidor" : "Natural";
+vopros += voprosend;
+console.log(vopros);
+
+let vopross = "Привет, ";
+if ("муж" > "жен") {
+  console.log(vopross);
+}
+let homo;
+for (homo == 10; homo > 1; --num) {
+  console.log(homo);
+  if (homo == 0) break;
+}
+
+let num = 0;
+while (num < 225) {
+  num++;
+
+  console.log(num);
+  if (num == 2) break;
+}
+console.log(`num == ${num}`);
+
+let gogopro = 0;
+for (; gogopro < 5; gogopro++) {
+  console.log(gogopro);
+  if (gogopro == 20) break;
+}
+console.log(`gogopro = ${gogopro}`);
+
+let Pushkin = 32;
+for (; Pushkin < 33; Pushkin--) {
+  console.log(Pushkin);
+  if (Pushkin == 0) break;
+}
+console.log(`Pushkin == ${Pushkin}`);
+
+firstFor: for (let num = 0; num < 50; num++) {
+  for (let size = 0; size < 10; size++) {
+    if (size == 5) {
+      break firstFor;
+    }
+    console.log(size);
+    console.log(num);
+  }
+}
+
+function showMessage() {
+  console.log(`Здарова пидоры!`);
+}
+showMessage();
+showMessage();
+showMessage();
+showMessage();
+showMessage();
+
+function calcSumm(numOne = 1, numTwo = 2) {
+  console.log(`Переменная первая = ${numOne}`);
+  console.log(`Переменная вторая = ${numTwo}`);
+  let numSumm = numOne + numTwo;
+  console.log(`Сумма = ${numSumm}`);
+}
+calcSumm(10, 19);
+calcSumm(55, 53);
+
+function calcSummTwo(numOne, numTwo, more, less) {
+  let calcSummTwo = numOne + numTwo;
+  if (calcSummTwo < 3) {
+    more();
+  } else {
+    less();
+  }
+}
+
+//* Короче more должен быть раньше less иначе ничего не заработает
+function ShowLessMessage() {
+  console.log(`Больше 3`);
+}
+function ShowMoreMessage() {
+  console.log(`Меньше 3`);
+}
+calcSummTwo(25, 20, ShowMoreMessage, ShowLessMessage);
+
+function calcSumm(numOne, numTwo) {
+  if (numTwo === 1) {
+    return numOne;
+  } else {
+    return numOne * calcSumm(numOne, numTwo - 1);
+  }
+}
+console.log(calcSumm(2, 8));
+
+// Стрелочиная функция
+let pussyRiot = (woman, pussy) => woman + ` есть ` + pussy;
+
+console.log(pussyRiot(`Женщине`, `25`));
+
+function intervalS(text, word) {
+  console.log(`${text}, ${word}`);
+}
+
+setTimeout(intervalS, 5000, `Женщине`, `sd`);
+
+function chistimTime(number) {
+  console.log(number);
+  let timeId = setTimeout(chistimTime, 1000, ++number);
+
+  if (number === 6) {
+    clearTimeout(timeId);
+  }
+}
+setTimeout(chistimTime, 1000, 1);
+
+let userInfo = {
+  name: "Лиза",
+  age: "30",
+};
+console.log(userInfo);
+console.log(userInfo.name);
+
+//СОЗДАЕМ ОБЪЕКТ
+let objectSam = {
+  name: "Sam",
+  age: "23",
+  adress: {
+    city: "Moscow",
+    street: "Zareviy",
+  },
+};
+console.log(objectSam.adress.street);
+
+function timetime(timetime) {
+  console.log(timetime);
+}
+
+setTimeout(timetime, 2000, `LETS GO`);
+
+let createHelloWorld = function () {
+  text = `Hello World`;
+  {
+    console.log(text);
+  }
+};
+
+// Манипуляции с объектами
+
+let objectManipulation = {
+  objectDelete: 23,
+};
+//Добавил
+objectManipulation.objectAdd = 25;
+//Удалил
+delete objectManipulation.objectDelete;
+//Добавил объект в объект
+objectManipulation.adress = {
+  street: `Lolo`,
+  food: `pizza`,
+};
+//Изменил 25 на 15
+objectManipulation.objectAdd = 15;
+//Добавил 2 переменные
+Object.assign(objectManipulation, { [`likes pizza`]: true, city: `Moscow` });
+console.log(objectManipulation);
+console.log(objectManipulation.adress);
+
+//Функция конструктор
+function UserInfo(name) {
+  // this = {}; создается пустой объект
+  this.name = name;
+  this.age = 30;
+
+  //return this; Возвращается объект (неявно)
+}
+console.log(new UserInfo(`Вася`));
+console.log(new UserInfo(`ЛИЗА`));
+
+let emptyObject = {
+  name: `Вася`,
+  age: `30`,
+};
+emptyObject.name = `Лена`;
+delete emptyObject.age;
+console.log(emptyObject);
+
+// Округляем сотые и десятые
+
+let someNum = Math.round(5.543 * 100) / 100;
+console.log(someNum); // 5.54, если знаков больше, то при делении на 100 уберет лишнее. (5.5433 * 100) / 100 = 5.54
+
+let numFour = 1.005 + Number.EPSILON;
+let numFive = Math.round((numFour * 100) / 100);
+console.log(numFive * 100);
+
+console.log(numFour * 100);
+console.log(Math.round(numFour * 100));
+
+// HOME/W // ОКРУГЛЕНИЕ
+let nuumOne = 1.005 + Number.EPSILON;
+let nuumSorce = Math.round(nuumOne * 100);
+console.log(nuumSorce);
+
+console.log(nuumOne * 100);
+console.log(Math.round(nuumOne * 100) / 100);
+
+let value = parseFloat("135.34px"); //В ЧИСЛО
+console.log(value);
+
+let value2 = 58 + "Фриланс"; //Проверка на Nan
+if (isNaN(value) == false) {
+  console.log("Результат выражения NaN");
+}
+
+let math1 = Math.max(10, 58, 35, -150);
+console.log(math1);
+
+let math2 = Math.min(10, 58, 35, -150);
+console.log(math2);
+
+let value3 = parseInt("135.34px"); //В ЧИСЛО
+console.log(value3);
+
+//МАССИВЫ
+
+let arrOne = [
+  "Ваня",
+  "Петя",
+  "Коля",
+  {
+    age1: 36,
+    style1: 55,
+  },
+];
+console.log(arrOne);
+
+//Изменение массива
+//Удаление последнего
+let arrTwo = [`Ваня`, `Оля`, `Петя`];
+
+arrTwo.splice(-1, 1);
+console.log(arrTwo);
+
+//Добавление во 2 позицию
+let arrThree = [`Ваня`, `Оля`, `Петя`];
+arrThree.splice(1, 1, `ЛИЗА`);
+console.log(arrThree);
+
+//Поиск обьекта в массиве
+
+let masive = [
+  { name: `Петя`, age: 5 },
+  { name: `Оля`, age: 24 },
+  { name: `Света`, age: 25 },
+];
+let resulti = masive.filter(function (item, index, array) {
+  return item.age >= 17;
+});
+console.log(resulti);
+
+let arr = ["Ваня", "Петя", "Юля"];
+
+// arr.length!
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
+}
+
+//МЕТОД REDUCE - подумать
+
+let ar22r = ["Ванrя", "Петя", "Юля"];
+
+let reduceMethodOne = ar22r.reduceRight(function (
+  previousValue,
+  item,
+  index,
+  array
+) {
+  console.log(previousValue);
+  console.log(item);
+  return `${item}, ${previousValue}`;
+});
+console.log(`Пользователи: ${reduceMethodOne}`);
+
+let userssss = 1 === "1";
+console.log(userssss);
+
+import React from "React";
